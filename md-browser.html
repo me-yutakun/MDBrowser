@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Markdown Browser</title>
+
+  <!--
+  ╔══════════════════════════════════════════════════════════════════════╗
+  ║                         MDBrowser v1.0.0                             ║
+  ║  This project is a fully client-side Markdown viewer with:           ║
+  ║   • Split-pane layout with collapsible sidebar                       ║
+  ║   • Recursive folder tree via File System Access API                 ║
+  ║   • Live Preview (auto-refresh on local file save)                   ║
+  ║   • GitHub-style Markdown (Mermaid, KaTeX, Alerts)                   ║
+  ║   • Drag-and-drop & smooth TOC anchor navigation                     ║
+  ║   • Dark mode & Back to top button                                   ║
+  ║                                                                      ║
+  ║  No backend. No build step. No server. Offline.                      ║
+  ╚══════════════════════════════════════════════════════════════════════╝
+  -->
+
+  <!-- External Libraries -->
+  <script src="./ext/marked.min.js"></script>
+  <script src="./ext/mermaid.min.js"></script>
+  <script src="./ext/katex/katex.min.js"></script>
+  <script src="./ext/katex/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="./ext/katex/katex.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/left-pane.css">
+  <link rel="stylesheet" href="./css/right-pane.css">
+
+  <!-- JS -->
+  <script src="./js/collapsible-file-tree.js" defer></script>
+  <script src="./js/renderer-md-wmermaid.js" defer></script>
+  <script src="./js/live-preview.js" defer></script>
+  <script src="./js/dragndrop-dir.js" defer></script>
+  <script src="./js/toggle-darkmode.js" defer></script>
+  <script src="./js/toggle-sidebar.js" defer></script>
+  <script src="./js/back-to-top.js" defer></script>
+
+</head>
+
+<body>
+  <!-- LEFT PANE -->
+  <div id="sidebar">
+    <h2>DocPane</h2>
+    <button id="openFolderBtn" style="width: 100%; margin-bottom: 10px; padding: 6px; cursor: pointer;">Open
+      Folder</button>
+    <input type="file" id="folderInput" webkitdirectory directory multiple style="display: none;">
+    <div id="fileTree"></div>
+  </div>
+
+  <!-- RIGHT PANE -->
+  <div id="viewer">
+    <div id="topbar">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <button id="toggleSidebar" style="padding: 2px 6px;" title="Toggle Sidebar">◀</button>
+        <h2>Markdown Viewer</h2>
+      </div>
+      <button id="darkToggle">Dark Mode</button>
+    </div>
+
+    <div id="dropZone">Drop a .md file here</div>
+
+    <div id="output" class="markdown-body markdown-body-light">
+      <em>Select a folder or drop a Markdown file here</em>
+    </div>
+  </div>
+
+  <button id="backToTopBtn" title="Go to top">⬆</button>
+</body>
+
+</html>

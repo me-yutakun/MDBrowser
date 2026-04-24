@@ -1,0 +1,57 @@
+/* ─────────────────────────────────────────────────────────────── */
+/* LEFT PANE — TOC‑STYLE FILE BROWSER                              */
+/* ─────────────────────────────────────────────────────────────── */
+#sidebar {
+    width: 200px;
+    border-right: 1px solid var(--border);
+    padding: 10px;
+    overflow-y: auto;
+    background: var(--bg);
+    font-size: 0.85rem;
+}
+
+#sidebar.collapsed {
+    display: none;
+}
+
+#folderInput {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.folder {
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 6px;
+    user-select: none;
+}
+
+.folder::before {
+    content: "▸ ";
+    color: var(--accent);
+}
+
+.folder.open::before {
+    content: "▾ ";
+}
+
+.children {
+    margin-left: 12px;
+    display: none;
+}
+
+.children.open {
+    display: block;
+}
+
+.file {
+    padding: 2px 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
+.file:hover {
+    background: var(--accent);
+    color: white;
+}

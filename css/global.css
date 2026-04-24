@@ -1,0 +1,40 @@
+/* ─────────────────────────────────────────────────────────────── */
+/* GLOBAL LAYOUT                                                   */
+/* ─────────────────────────────────────────────────────────────── */
+/* GitHub Markdown CSS (light first = default) */
+:root:not(.dark) .markdown-body {
+    @import url("https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.css");
+}
+
+/* Dark theme (only after toggle) */
+:root.dark .markdown-body {
+    @import url("https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.css");
+}
+
+:root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --border: #d0d7de;
+    --accent: #0969da;
+    --code-bg: #f6f8fa;
+    --link: #ffd500;
+}
+
+:root.dark {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --border: #30363d;
+    --accent: #58a6ff;
+    --code-bg: #161b22;
+    --link: #ffea70;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    background: var(--bg);
+    color: var(--fg);
+    transition: background .2s ease, color .2s ease;
+    font-family: system-ui, sans-serif;
+}
