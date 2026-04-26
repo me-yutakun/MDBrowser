@@ -26,7 +26,7 @@
 Getting up and running takes less than 30 seconds:
 1. **Clone or Download**
    ```bash
-   git clone https://github.com/yourname/MDBrowser.git
+   git clone https://github.com/me-yutakun/MDBrowser.git
    ```
 2. **Launch the App**
    Simply open `md-browser.html` in any modern web browser (Chrome, Edge, or Firefox).
